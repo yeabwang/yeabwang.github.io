@@ -587,6 +587,12 @@ header {
   margin-bottom: 2rem;
   line-height: 1.8;
 }
+.contact-lead a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.contact-lead a:hover { opacity: .65; }
 
 .contact-email {
   display: inline-block;
