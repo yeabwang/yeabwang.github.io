@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Researcher & Developer</title>
+  <meta name="description" content="Personal CV website of Your Name — Researcher & Developer." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <!-- Feather icons (CDN) -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <header>
+    <nav class="navbar">
+      <a href="#about" class="nav-logo">YourName</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <i data-feather="menu"></i>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <i data-feather="moon" id="theme-icon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── About ──────────────────────────────────────────────── -->
+    <section id="about" class="section hero-section">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-greeting">Hi, I'm</p>
+          <h1 class="hero-name">Your Name</h1>
+          <p class="hero-title">Researcher &amp; Developer</p>
+          <p class="hero-bio">
+            I'm a PhD researcher at <strong>University Name</strong> working on
+            [your research area]. I also build open-source tools at the
+            intersection of [field A] and [field B].
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get in touch</a>
+            <a href="assets/cv.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+              Download CV <i data-feather="download" class="btn-icon"></i>
+            </a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i data-feather="github"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+            <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter"><i data-feather="twitter"></i></a>
+            <a href="mailto:you@email.com" aria-label="Email"><i data-feather="mail"></i></a>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <img
+            src="assets/profile.jpg"
+            alt="Profile photo of Your Name"
+            class="hero-photo"
+            onerror="this.src='assets/avatar-placeholder.svg'"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Education ──────────────────────────────────────────── -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3>PhD in Computer Science</h3>
+                  <p class="institution">University Name, City, Country</p>
+                </div>
+                <span class="badge">2021 – Present</span>
+              </div>
+              <p>Thesis: <em>"Your Thesis Title Here"</em></p>
+              <p>Advisor: Prof. Advisor Name</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3>MSc in Computer Science</h3>
+                  <p class="institution">University Name, City, Country</p>
+                </div>
+                <span class="badge">2019 – 2021</span>
+              </div>
+              <p>Graduated with distinction. Focus: [area].</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3>BSc in Computer Science</h3>
+                  <p class="institution">University Name, City, Country</p>
+                </div>
+                <span class="badge">2015 – 2019</span>
+              </div>
+              <p>Graduated with honors. Minor: Mathematics.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Experience ─────────────────────────────────────────── -->
+    <section id="experience" class="section alt-section">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3>Research Intern</h3>
+                  <p class="institution">Company / Lab Name</p>
+                </div>
+                <span class="badge">Summer 2023</span>
+              </div>
+              <ul class="bullet-list">
+                <li>Developed [tool/model] that improved [metric] by X%.</li>
+                <li>Collaborated with a team of N researchers on [topic].</li>
+                <li>Published findings at [venue].</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3>Software Engineer</h3>
+                  <p class="institution">Company Name</p>
+                </div>
+                <span class="badge">2019 – 2021</span>
+              </div>
+              <ul class="bullet-list">
+                <li>Built and maintained [product/service] using [tech stack].</li>
+                <li>Reduced latency by X% through [optimization].</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Publications ───────────────────────────────────────── -->
+    <section id="publications" class="section">
+      <div class="container">
+        <h2 class="section-title">Publications</h2>
+        <p class="section-subtitle">
+          Also on
+          <a href="https://scholar.google.com/citations?user=YOURID" target="_blank" rel="noopener">Google Scholar</a>
+          ·
+          <a href="https://arxiv.org/a/YOURID.html" target="_blank" rel="noopener">arXiv</a>
+        </p>
+
+        <div class="pub-list">
+
+          <div class="card pub-card">
+            <span class="pub-venue-badge">NeurIPS 2024</span>
+            <h3 class="pub-title">Your Paper Title Here</h3>
+            <p class="pub-authors"><strong>Your Name</strong>, Co-author One, Co-author Two</p>
+            <p class="pub-abstract">
+              Brief abstract or one-liner about the paper's contribution.
+            </p>
+            <div class="pub-links">
+              <a href="#" class="link-chip"><i data-feather="file-text"></i> Paper</a>
+              <a href="#" class="link-chip"><i data-feather="code"></i> Code</a>
+              <a href="#" class="link-chip"><i data-feather="play-circle"></i> Demo</a>
+            </div>
+          </div>
+
+          <div class="card pub-card">
+            <span class="pub-venue-badge">ICML 2023</span>
+            <h3 class="pub-title">Another Paper Title Here</h3>
+            <p class="pub-authors"><strong>Your Name</strong>, Co-author Three</p>
+            <p class="pub-abstract">
+              Brief abstract or one-liner about the paper's contribution.
+            </p>
+            <div class="pub-links">
+              <a href="#" class="link-chip"><i data-feather="file-text"></i> Paper</a>
+              <a href="#" class="link-chip"><i data-feather="code"></i> Code</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Projects ───────────────────────────────────────────── -->
+    <section id="projects" class="section alt-section">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+
+          <div class="card project-card">
+            <div class="project-header">
+              <i data-feather="box" class="project-icon"></i>
+              <div class="project-links">
+                <a href="#" aria-label="GitHub repo"><i data-feather="github"></i></a>
+                <a href="#" aria-label="Live demo"><i data-feather="external-link"></i></a>
+              </div>
+            </div>
+            <h3>Project Name</h3>
+            <p>Short description of what this project does and the problem it solves.</p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">NLP</span>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="project-header">
+              <i data-feather="cpu" class="project-icon"></i>
+              <div class="project-links">
+                <a href="#" aria-label="GitHub repo"><i data-feather="github"></i></a>
+              </div>
+            </div>
+            <h3>Another Project</h3>
+            <p>Short description of what this project does and the problem it solves.</p>
+            <div class="tag-list">
+              <span class="tag">Rust</span>
+              <span class="tag">WebAssembly</span>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="project-header">
+              <i data-feather="bar-chart-2" class="project-icon"></i>
+              <div class="project-links">
+                <a href="#" aria-label="GitHub repo"><i data-feather="github"></i></a>
+                <a href="#" aria-label="Live demo"><i data-feather="external-link"></i></a>
+              </div>
+            </div>
+            <h3>Data Visualization Tool</h3>
+            <p>Short description of what this project does and the problem it solves.</p>
+            <div class="tag-list">
+              <span class="tag">D3.js</span>
+              <span class="tag">TypeScript</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Skills ─────────────────────────────────────────────── -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+
+          <div class="card skill-card">
+            <i data-feather="code" class="skill-icon"></i>
+            <h3>Languages</h3>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">C++</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Rust</span>
+              <span class="tag">R</span>
+            </div>
+          </div>
+
+          <div class="card skill-card">
+            <i data-feather="layers" class="skill-icon"></i>
+            <h3>Frameworks &amp; Libraries</h3>
+            <div class="tag-list">
+              <span class="tag">PyTorch</span>
+              <span class="tag">TensorFlow</span>
+              <span class="tag">scikit-learn</span>
+              <span class="tag">HuggingFace</span>
+              <span class="tag">React</span>
+              <span class="tag">FastAPI</span>
+            </div>
+          </div>
+
+          <div class="card skill-card">
+            <i data-feather="tool" class="skill-icon"></i>
+            <h3>Tools &amp; Infrastructure</h3>
+            <div class="tag-list">
+              <span class="tag">Git</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Linux</span>
+              <span class="tag">LaTeX</span>
+              <span class="tag">SLURM</span>
+            </div>
+          </div>
+
+          <div class="card skill-card">
+            <i data-feather="book-open" class="skill-icon"></i>
+            <h3>Research Areas</h3>
+            <div class="tag-list">
+              <span class="tag">Machine Learning</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Algorithms</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ────────────────────────────────────────────── -->
+    <section id="contact" class="section alt-section">
+      <div class="container contact-container">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">
+          Feel free to reach out for collaborations, questions, or just a chat.
+        </p>
+        <div class="contact-grid">
+
+          <a href="mailto:you@email.com" class="card contact-card">
+            <i data-feather="mail" class="contact-icon"></i>
+            <span>you@email.com</span>
+          </a>
+
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="card contact-card">
+            <i data-feather="github" class="contact-icon"></i>
+            <span>github.com/yourusername</span>
+          </a>
+
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" class="card contact-card">
+            <i data-feather="linkedin" class="contact-icon"></i>
+            <span>linkedin.com/in/yourusername</span>
+          </a>
+
+          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener" class="card contact-card">
+            <i data-feather="twitter" class="contact-icon"></i>
+            <span>@yourusername</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Your Name. Built with ♥ and plain HTML/CSS/JS.</p>
+      <a href="#about" class="back-to-top" aria-label="Back to top">
+        <i data-feather="arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
