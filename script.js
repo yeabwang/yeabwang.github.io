@@ -1,77 +1,94 @@
-/* ── Feather icons init ──────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  feather.replace();
-  init();
+  setupTheme();
+  setupHamburger();
+  setupActiveNav();
+  setupReveal();
+  document.getElementById('year').textContent = new Date().getFullYear();
 });
 
-function init() {
-  setupThemeToggle();
-  setupHamburger();
-  setupActiveNavOnScroll();
-  document.getElementById('year').textContent = new Date().getFullYear();
-}
+/* ── Dark / Light ────────────────────────────────────────────── */
+function setupTheme() {
+  const root = document.documentElement;
+  const btn  = document.getElementById('theme-toggle');
 
-/* ── Dark / Light Mode ───────────────────────────────────────── */
-function setupThemeToggle() {
-  const root    = document.documentElement;
-  const btn     = document.getElementById('theme-toggle');
-  const iconEl  = document.getElementById('theme-icon');
-
-  // Restore saved preference or use system default
-  const saved = localStorage.getItem('theme');
+  const saved       = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initial = saved || (prefersDark ? 'dark' : 'light');
-  applyTheme(initial);
+  apply(saved || (prefersDark ? 'dark' : 'light'));
 
   btn.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme');
-    applyTheme(current === 'dark' ? 'light' : 'dark');
+    apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
 
-  function applyTheme(theme) {
+  function apply(theme) {
     root.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
-    // Swap icon: moon → shown in light mode (click to go dark), sun → shown in dark mode
-    iconEl.setAttribute('data-feather', theme === 'dark' ? 'sun' : 'moon');
-    feather.replace(); // re-render all feather icons
   }
 }
 
-/* ── Hamburger Menu ──────────────────────────────────────────── */
+/* ── Hamburger ───────────────────────────────────────────────── */
 function setupHamburger() {
-  const hamburger = document.getElementById('hamburger');
-  const navLinks  = document.getElementById('nav-links');
+  const btn   = document.getElementById('hamburger');
+  const links = document.getElementById('nav-links');
 
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+  btn.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
   });
 
-  // Close menu when a link is clicked
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => navLinks.classList.remove('open'));
-  });
+  links.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+      btn.classList.remove('open');
+    })
+  );
 }
 
-/* ── Active Nav Link on Scroll ───────────────────────────────── */
-function setupActiveNavOnScroll() {
+/* ── Active nav on scroll ────────────────────────────────────── */
+function setupActiveNav() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
+  const links    = document.querySelectorAll('.nav-links a');
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.classList.toggle(
-              'active',
-              link.getAttribute('href') === `#${entry.target.id}`
-            );
-          });
-        }
-      });
-    },
-    { rootMargin: '-40% 0px -55% 0px' }
+  new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting)
+        links.forEach(l =>
+          l.classList.toggle('active', l.getAttribute('href') === `#${e.target.id}`)
+        );
+    }),
+    { rootMargin: '-35% 0px -60% 0px' }
+  ).observe
+    ? sections.forEach(s =>
+        new IntersectionObserver(
+          ([e]) => {
+            if (e.isIntersecting)
+              links.forEach(l =>
+                l.classList.toggle('active', l.getAttribute('href') === `#${e.target.id}`)
+              );
+          },
+          { rootMargin: '-35% 0px -60% 0px' }
+        ).observe(s)
+      )
+    : null;
+}
+
+/* ── Scroll Reveal ───────────────────────────────────────────── */
+function setupReveal() {
+  const els = document.querySelectorAll('.reveal');
+  const io  = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    }),
+    { threshold: 0.12 }
   );
-
-  sections.forEach(section => observer.observe(section));
+  els.forEach((el, i) => {
+    // Stagger siblings within the same parent
+    const siblings = [...el.parentElement.querySelectorAll('.reveal')];
+    const idx      = siblings.indexOf(el);
+    el.style.transitionDelay = `${idx * 80}ms`;
+    io.observe(el);
+  });
 }

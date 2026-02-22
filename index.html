@@ -4,22 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Name — Researcher & Developer</title>
-  <meta name="description" content="Personal CV website of Your Name — Researcher & Developer." />
+  <meta name="description" content="Personal CV of Your Name — Researcher & Developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <!-- Feather icons (CDN) -->
-  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
 
-  <!-- ── Navigation ─────────────────────────────────────────── -->
-  <header>
+  <!-- ── Navigation ───────────────────────────────────────────── -->
+  <header id="site-header">
     <nav class="navbar">
-      <a href="#about" class="nav-logo">YourName</a>
-
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <i data-feather="menu"></i>
-      </button>
+      <a href="#about" class="nav-logo">YN</a>
 
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
@@ -31,96 +28,108 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <i data-feather="moon" id="theme-icon"></i>
-      </button>
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+            <span class="toggle-label light-label">L</span>
+            <span class="toggle-label dark-label">D</span>
+          </span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
   <main>
 
-    <!-- ── About ──────────────────────────────────────────────── -->
-    <section id="about" class="section hero-section">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p class="hero-greeting">Hi, I'm</p>
-          <h1 class="hero-name">Your Name</h1>
-          <p class="hero-title">Researcher &amp; Developer</p>
-          <p class="hero-bio">
-            I'm a PhD researcher at <strong>University Name</strong> working on
-            [your research area]. I also build open-source tools at the
-            intersection of [field A] and [field B].
-          </p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Get in touch</a>
-            <a href="assets/cv.pdf" class="btn btn-outline" target="_blank" rel="noopener">
-              Download CV <i data-feather="download" class="btn-icon"></i>
-            </a>
+    <!-- ── Hero ─────────────────────────────────────────────────── -->
+    <section id="about" class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <p class="hero-eyebrow reveal">PhD Researcher &amp; Software Developer</p>
+            <h1 class="hero-name reveal">
+              Your<br/><em>Name</em>
+            </h1>
+            <p class="hero-bio reveal">
+              I work at the intersection of <strong>machine learning</strong> and
+              <strong>systems</strong>, building tools that make research reproducible and
+              scalable. Currently pursuing a PhD at <strong>University Name</strong>.
+            </p>
+            <div class="hero-cta reveal">
+              <a href="#contact" class="btn-primary">Say hello</a>
+              <a href="assets/cv.pdf" class="btn-ghost" target="_blank" rel="noopener">Download CV</a>
+            </div>
           </div>
-          <div class="hero-socials">
-            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i data-feather="github"></i></a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
-            <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter"><i data-feather="twitter"></i></a>
-            <a href="mailto:you@email.com" aria-label="Email"><i data-feather="mail"></i></a>
+          <div class="hero-right reveal">
+            <div class="photo-frame">
+              <img
+                src="assets/profile.jpg"
+                alt="Your Name"
+                onerror="this.src='assets/avatar-placeholder.svg'"
+              />
+            </div>
+            <div class="social-list">
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://scholar.google.com" target="_blank" rel="noopener" aria-label="Google Scholar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </a>
+              <a href="mailto:you@email.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="hero-photo-wrap">
-          <img
-            src="assets/profile.jpg"
-            alt="Profile photo of Your Name"
-            class="hero-photo"
-            onerror="this.src='assets/avatar-placeholder.svg'"
-          />
         </div>
       </div>
     </section>
 
-    <!-- ── Education ──────────────────────────────────────────── -->
+    <!-- ── Education ────────────────────────────────────────────── -->
     <section id="education" class="section">
       <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline">
+        <div class="section-head reveal">
+          <span class="section-num">01</span>
+          <h2>Education</h2>
+        </div>
+        <div class="entry-list">
 
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="card">
-              <div class="card-header">
-                <div>
-                  <h3>PhD in Computer Science</h3>
-                  <p class="institution">University Name, City, Country</p>
-                </div>
-                <span class="badge">2021 – Present</span>
-              </div>
-              <p>Thesis: <em>"Your Thesis Title Here"</em></p>
-              <p>Advisor: Prof. Advisor Name</p>
+          <div class="entry reveal">
+            <div class="entry-meta">
+              <span class="entry-year">2021 – Present</span>
+            </div>
+            <div class="entry-body">
+              <h3>PhD in Computer Science</h3>
+              <p class="entry-place">University Name · City, Country</p>
+              <p class="entry-desc">Thesis: <em>"Your Thesis Title Here."</em> Advisor: Prof. Advisor Name.</p>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="card">
-              <div class="card-header">
-                <div>
-                  <h3>MSc in Computer Science</h3>
-                  <p class="institution">University Name, City, Country</p>
-                </div>
-                <span class="badge">2019 – 2021</span>
-              </div>
-              <p>Graduated with distinction. Focus: [area].</p>
+          <div class="entry reveal">
+            <div class="entry-meta">
+              <span class="entry-year">2019 – 2021</span>
+            </div>
+            <div class="entry-body">
+              <h3>MSc in Computer Science</h3>
+              <p class="entry-place">University Name · City, Country</p>
+              <p class="entry-desc">Graduated with distinction. Focus on [research area].</p>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="card">
-              <div class="card-header">
-                <div>
-                  <h3>BSc in Computer Science</h3>
-                  <p class="institution">University Name, City, Country</p>
-                </div>
-                <span class="badge">2015 – 2019</span>
-              </div>
-              <p>Graduated with honors. Minor: Mathematics.</p>
+          <div class="entry reveal">
+            <div class="entry-meta">
+              <span class="entry-year">2015 – 2019</span>
+            </div>
+            <div class="entry-body">
+              <h3>BSc in Computer Science</h3>
+              <p class="entry-place">University Name · City, Country</p>
+              <p class="entry-desc">Graduated with honors. Minor in Mathematics.</p>
             </div>
           </div>
 
@@ -128,43 +137,39 @@
       </div>
     </section>
 
-    <!-- ── Experience ─────────────────────────────────────────── -->
-    <section id="experience" class="section alt-section">
+    <!-- ── Experience ───────────────────────────────────────────── -->
+    <section id="experience" class="section section-alt">
       <div class="container">
-        <h2 class="section-title">Experience</h2>
-        <div class="timeline">
+        <div class="section-head reveal">
+          <span class="section-num">02</span>
+          <h2>Experience</h2>
+        </div>
+        <div class="entry-list">
 
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="card">
-              <div class="card-header">
-                <div>
-                  <h3>Research Intern</h3>
-                  <p class="institution">Company / Lab Name</p>
-                </div>
-                <span class="badge">Summer 2023</span>
-              </div>
-              <ul class="bullet-list">
+          <div class="entry reveal">
+            <div class="entry-meta">
+              <span class="entry-year">Summer 2023</span>
+            </div>
+            <div class="entry-body">
+              <h3>Research Intern</h3>
+              <p class="entry-place">Company / Lab Name</p>
+              <ul class="entry-bullets">
                 <li>Developed [tool/model] that improved [metric] by X%.</li>
-                <li>Collaborated with a team of N researchers on [topic].</li>
-                <li>Published findings at [venue].</li>
+                <li>Collaborated with N researchers on [topic], leading to a publication at [venue].</li>
               </ul>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="card">
-              <div class="card-header">
-                <div>
-                  <h3>Software Engineer</h3>
-                  <p class="institution">Company Name</p>
-                </div>
-                <span class="badge">2019 – 2021</span>
-              </div>
-              <ul class="bullet-list">
+          <div class="entry reveal">
+            <div class="entry-meta">
+              <span class="entry-year">2019 – 2021</span>
+            </div>
+            <div class="entry-body">
+              <h3>Software Engineer</h3>
+              <p class="entry-place">Company Name</p>
+              <ul class="entry-bullets">
                 <li>Built and maintained [product/service] using [tech stack].</li>
-                <li>Reduced latency by X% through [optimization].</li>
+                <li>Reduced latency by X% through [optimization approach].</li>
               </ul>
             </div>
           </div>
@@ -173,43 +178,57 @@
       </div>
     </section>
 
-    <!-- ── Publications ───────────────────────────────────────── -->
+    <!-- ── Publications ─────────────────────────────────────────── -->
     <section id="publications" class="section">
       <div class="container">
-        <h2 class="section-title">Publications</h2>
-        <p class="section-subtitle">
-          Also on
+        <div class="section-head reveal">
+          <span class="section-num">03</span>
+          <h2>Publications</h2>
+        </div>
+        <p class="section-note reveal">
+          Full list on
           <a href="https://scholar.google.com/citations?user=YOURID" target="_blank" rel="noopener">Google Scholar</a>
-          ·
-          <a href="https://arxiv.org/a/YOURID.html" target="_blank" rel="noopener">arXiv</a>
+          and <a href="https://arxiv.org/a/YOURID.html" target="_blank" rel="noopener">arXiv</a>.
         </p>
 
         <div class="pub-list">
 
-          <div class="card pub-card">
-            <span class="pub-venue-badge">NeurIPS 2024</span>
-            <h3 class="pub-title">Your Paper Title Here</h3>
-            <p class="pub-authors"><strong>Your Name</strong>, Co-author One, Co-author Two</p>
-            <p class="pub-abstract">
-              Brief abstract or one-liner about the paper's contribution.
-            </p>
-            <div class="pub-links">
-              <a href="#" class="link-chip"><i data-feather="file-text"></i> Paper</a>
-              <a href="#" class="link-chip"><i data-feather="code"></i> Code</a>
-              <a href="#" class="link-chip"><i data-feather="play-circle"></i> Demo</a>
+          <div class="pub-entry reveal">
+            <span class="pub-venue">NeurIPS 2024</span>
+            <div class="pub-body">
+              <h3 class="pub-title">Your Paper Title Here</h3>
+              <p class="pub-authors"><strong>Your Name</strong>, Co-author One, Co-author Two</p>
+              <p class="pub-desc">Brief one-liner about the paper's core contribution and impact.</p>
+              <div class="pub-links">
+                <a href="#">Paper →</a>
+                <a href="#">Code →</a>
+                <a href="#">Demo →</a>
+              </div>
             </div>
           </div>
 
-          <div class="card pub-card">
-            <span class="pub-venue-badge">ICML 2023</span>
-            <h3 class="pub-title">Another Paper Title Here</h3>
-            <p class="pub-authors"><strong>Your Name</strong>, Co-author Three</p>
-            <p class="pub-abstract">
-              Brief abstract or one-liner about the paper's contribution.
-            </p>
-            <div class="pub-links">
-              <a href="#" class="link-chip"><i data-feather="file-text"></i> Paper</a>
-              <a href="#" class="link-chip"><i data-feather="code"></i> Code</a>
+          <div class="pub-entry reveal">
+            <span class="pub-venue">ICML 2023</span>
+            <div class="pub-body">
+              <h3 class="pub-title">Another Paper Title Here</h3>
+              <p class="pub-authors"><strong>Your Name</strong>, Co-author Three</p>
+              <p class="pub-desc">Brief one-liner about the paper's core contribution and impact.</p>
+              <div class="pub-links">
+                <a href="#">Paper →</a>
+                <a href="#">Code →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub-entry reveal">
+            <span class="pub-venue">EMNLP 2022</span>
+            <div class="pub-body">
+              <h3 class="pub-title">A Third Paper Title Here</h3>
+              <p class="pub-authors"><strong>Your Name</strong>, Co-author Four, Co-author Five</p>
+              <p class="pub-desc">Brief one-liner about the paper's core contribution and impact.</p>
+              <div class="pub-links">
+                <a href="#">Paper →</a>
+              </div>
             </div>
           </div>
 
@@ -217,117 +236,109 @@
       </div>
     </section>
 
-    <!-- ── Projects ───────────────────────────────────────────── -->
-    <section id="projects" class="section alt-section">
+    <!-- ── Projects ─────────────────────────────────────────────── -->
+    <section id="projects" class="section section-alt">
       <div class="container">
-        <h2 class="section-title">Projects</h2>
+        <div class="section-head reveal">
+          <span class="section-num">04</span>
+          <h2>Projects</h2>
+        </div>
         <div class="projects-grid">
 
-          <div class="card project-card">
-            <div class="project-header">
-              <i data-feather="box" class="project-icon"></i>
-              <div class="project-links">
-                <a href="#" aria-label="GitHub repo"><i data-feather="github"></i></a>
-                <a href="#" aria-label="Live demo"><i data-feather="external-link"></i></a>
+          <a href="#" class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <h3>Project Name</h3>
+                <span class="project-arrow">↗</span>
+              </div>
+              <p>Short description of what this project does and the problem it solves.</p>
+              <div class="tag-row">
+                <span>Python</span><span>PyTorch</span><span>NLP</span>
               </div>
             </div>
-            <h3>Project Name</h3>
-            <p>Short description of what this project does and the problem it solves.</p>
-            <div class="tag-list">
-              <span class="tag">Python</span>
-              <span class="tag">PyTorch</span>
-              <span class="tag">NLP</span>
-            </div>
-          </div>
+          </a>
 
-          <div class="card project-card">
-            <div class="project-header">
-              <i data-feather="cpu" class="project-icon"></i>
-              <div class="project-links">
-                <a href="#" aria-label="GitHub repo"><i data-feather="github"></i></a>
+          <a href="#" class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <h3>Another Project</h3>
+                <span class="project-arrow">↗</span>
+              </div>
+              <p>Short description of what this project does and the problem it solves.</p>
+              <div class="tag-row">
+                <span>Rust</span><span>WebAssembly</span>
               </div>
             </div>
-            <h3>Another Project</h3>
-            <p>Short description of what this project does and the problem it solves.</p>
-            <div class="tag-list">
-              <span class="tag">Rust</span>
-              <span class="tag">WebAssembly</span>
-            </div>
-          </div>
+          </a>
 
-          <div class="card project-card">
-            <div class="project-header">
-              <i data-feather="bar-chart-2" class="project-icon"></i>
-              <div class="project-links">
-                <a href="#" aria-label="GitHub repo"><i data-feather="github"></i></a>
-                <a href="#" aria-label="Live demo"><i data-feather="external-link"></i></a>
+          <a href="#" class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <h3>Data Visualization Tool</h3>
+                <span class="project-arrow">↗</span>
+              </div>
+              <p>Short description of what this project does and the problem it solves.</p>
+              <div class="tag-row">
+                <span>D3.js</span><span>TypeScript</span>
               </div>
             </div>
-            <h3>Data Visualization Tool</h3>
-            <p>Short description of what this project does and the problem it solves.</p>
-            <div class="tag-list">
-              <span class="tag">D3.js</span>
-              <span class="tag">TypeScript</span>
+          </a>
+
+          <a href="#" class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <h3>Research Framework</h3>
+                <span class="project-arrow">↗</span>
+              </div>
+              <p>Short description of what this project does and the problem it solves.</p>
+              <div class="tag-row">
+                <span>Python</span><span>CUDA</span><span>C++</span>
+              </div>
             </div>
-          </div>
+          </a>
 
         </div>
       </div>
     </section>
 
-    <!-- ── Skills ─────────────────────────────────────────────── -->
+    <!-- ── Skills ───────────────────────────────────────────────── -->
     <section id="skills" class="section">
       <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
+        <div class="section-head reveal">
+          <span class="section-num">05</span>
+          <h2>Skills</h2>
+        </div>
+        <div class="skills-table">
 
-          <div class="card skill-card">
-            <i data-feather="code" class="skill-icon"></i>
-            <h3>Languages</h3>
-            <div class="tag-list">
-              <span class="tag">Python</span>
-              <span class="tag">C++</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Rust</span>
-              <span class="tag">R</span>
+          <div class="skill-row reveal">
+            <span class="skill-label">Languages</span>
+            <div class="skill-tags">
+              <span>Python</span><span>C++</span><span>JavaScript</span>
+              <span>TypeScript</span><span>Rust</span><span>R</span><span>MATLAB</span>
             </div>
           </div>
 
-          <div class="card skill-card">
-            <i data-feather="layers" class="skill-icon"></i>
-            <h3>Frameworks &amp; Libraries</h3>
-            <div class="tag-list">
-              <span class="tag">PyTorch</span>
-              <span class="tag">TensorFlow</span>
-              <span class="tag">scikit-learn</span>
-              <span class="tag">HuggingFace</span>
-              <span class="tag">React</span>
-              <span class="tag">FastAPI</span>
+          <div class="skill-row reveal">
+            <span class="skill-label">Frameworks</span>
+            <div class="skill-tags">
+              <span>PyTorch</span><span>TensorFlow</span><span>JAX</span>
+              <span>HuggingFace</span><span>scikit-learn</span><span>FastAPI</span>
             </div>
           </div>
 
-          <div class="card skill-card">
-            <i data-feather="tool" class="skill-icon"></i>
-            <h3>Tools &amp; Infrastructure</h3>
-            <div class="tag-list">
-              <span class="tag">Git</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Kubernetes</span>
-              <span class="tag">Linux</span>
-              <span class="tag">LaTeX</span>
-              <span class="tag">SLURM</span>
+          <div class="skill-row reveal">
+            <span class="skill-label">Infrastructure</span>
+            <div class="skill-tags">
+              <span>Docker</span><span>Kubernetes</span><span>SLURM</span>
+              <span>AWS</span><span>Linux</span><span>Git</span>
             </div>
           </div>
 
-          <div class="card skill-card">
-            <i data-feather="book-open" class="skill-icon"></i>
-            <h3>Research Areas</h3>
-            <div class="tag-list">
-              <span class="tag">Machine Learning</span>
-              <span class="tag">NLP</span>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Algorithms</span>
+          <div class="skill-row reveal">
+            <span class="skill-label">Research</span>
+            <div class="skill-tags">
+              <span>Machine Learning</span><span>NLP</span>
+              <span>Computer Vision</span><span>Algorithms</span><span>Statistics</span>
             </div>
           </div>
 
@@ -335,48 +346,36 @@
       </div>
     </section>
 
-    <!-- ── Contact ────────────────────────────────────────────── -->
-    <section id="contact" class="section alt-section">
-      <div class="container contact-container">
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="section-subtitle">
-          Feel free to reach out for collaborations, questions, or just a chat.
-        </p>
-        <div class="contact-grid">
-
-          <a href="mailto:you@email.com" class="card contact-card">
-            <i data-feather="mail" class="contact-icon"></i>
-            <span>you@email.com</span>
-          </a>
-
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="card contact-card">
-            <i data-feather="github" class="contact-icon"></i>
-            <span>github.com/yourusername</span>
-          </a>
-
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" class="card contact-card">
-            <i data-feather="linkedin" class="contact-icon"></i>
-            <span>linkedin.com/in/yourusername</span>
-          </a>
-
-          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener" class="card contact-card">
-            <i data-feather="twitter" class="contact-icon"></i>
-            <span>@yourusername</span>
-          </a>
-
+    <!-- ── Contact ───────────────────────────────────────────────── -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="contact-inner reveal">
+          <div class="section-head">
+            <span class="section-num">06</span>
+            <h2>Get in Touch</h2>
+          </div>
+          <p class="contact-lead">
+            Open to collaborations, research discussions, and opportunities.
+            The best way to reach me is by email.
+          </p>
+          <a href="mailto:you@email.com" class="contact-email">you@email.com</a>
+          <div class="contact-links">
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://scholar.google.com" target="_blank" rel="noopener">Scholar</a>
+            <a href="https://arxiv.org" target="_blank" rel="noopener">arXiv</a>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <!-- ── Footer ───────────────────────────────────────────────── -->
   <footer>
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Your Name. Built with ♥ and plain HTML/CSS/JS.</p>
-      <a href="#about" class="back-to-top" aria-label="Back to top">
-        <i data-feather="arrow-up"></i>
-      </a>
+      <span>© <span id="year"></span> Your Name</span>
+      <a href="#about" class="to-top" aria-label="Back to top">↑ Top</a>
     </div>
   </footer>
 
