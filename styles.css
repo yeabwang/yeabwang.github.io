@@ -91,9 +91,9 @@ header {
 }
 
 .nav-links a {
-  font-size: .8rem;
+  font-size: .75rem;
   font-weight: 500;
-  letter-spacing: .6px;
+  letter-spacing: .5px;
   text-transform: uppercase;
   color: var(--muted);
   padding: .4rem .7rem;
